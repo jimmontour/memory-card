@@ -26,6 +26,7 @@ export default function CardContainer(props) {
       const cardSrc = e.target.attributes.src.nodeValue;
       updateCards(cardSrc)
       incrementScore()
+
    }
 
    const updateCards = (cardSrc) => {
@@ -46,10 +47,9 @@ export default function CardContainer(props) {
       deck.map((card) => {
          if (card.chosen === 2) {
             console.log('game over')
-            score > highScore ? setHighScore(score) : setHighScore(highScore)
+            score - 1 > highScore ? setHighScore(score - 1) : setHighScore(highScore)
             setScore(0)
             resetGame()
-
          }
       })
    })
@@ -81,7 +81,6 @@ export default function CardContainer(props) {
          return { ...card, chosen: 0 }
       }))
    }
-
 
    return (
       <div>
