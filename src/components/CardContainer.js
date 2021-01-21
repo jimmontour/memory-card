@@ -7,63 +7,55 @@ export default function CardContainer(props) {
    const [highScore, setHighScore] = useState(0);
 
    const [deck, setDeck] = useState([
-      { chosen: false, key: 1, src: '/img/1.png' },
-      { chosen: false, key: 2, src: '/img/2.png' },
-      { chosen: false, key: 3, src: '/img/3.png' },
-      { chosen: false, key: 4, src: '/img/4.png' },
-      { chosen: false, key: 5, src: '/img/5.png' },
-      { chosen: false, key: 6, src: '/img/6.png' },
-      { chosen: false, key: 7, src: '/img/7.png' },
-      { chosen: false, key: 8, src: '/img/8.png' },
-      { chosen: false, key: 9, src: '/img/9.png' },
-      { chosen: false, key: 10, src: '/img/10.png' },
-      { chosen: false, key: 11, src: '/img/11.png' },
-      { chosen: false, key: 12, src: '/img/12.png' },
+      { chosen: 0, key: 1, src: '/img/1.png' },
+      { chosen: 0, key: 2, src: '/img/2.png' },
+      { chosen: 0, key: 3, src: '/img/3.png' },
+      { chosen: 0, key: 4, src: '/img/4.png' },
+      { chosen: 0, key: 5, src: '/img/5.png' },
+      { chosen: 0, key: 6, src: '/img/6.png' },
+      { chosen: 0, key: 7, src: '/img/7.png' },
+      { chosen: 0, key: 8, src: '/img/8.png' },
+      { chosen: 0, key: 9, src: '/img/9.png' },
+      { chosen: 0, key: 10, src: '/img/10.png' },
+      { chosen: 0, key: 11, src: '/img/11.png' },
+      { chosen: 0, key: 12, src: '/img/12.png' },
    ])
 
    const handleClick = (e) => {
+      shuffle(deck)
       const cardSrc = e.target.attributes.src.nodeValue;
+      updateCards(cardSrc)
       incrementScore()
-      checkForDuplicate(cardSrc)
-      updateCardStatus(cardSrc)
    }
 
-   const checkForDuplicate = (cardSrc) => {
-      deck.map((card) => {
-         if (cardSrc === card.src && card.chosen === true) {
-            console.log(cardSrc, card.src, card.chosen)
-            return resetGame()
-         }
-      })
-   }
-
-   const incrementScore = () => {
-      setScore(score + 1)
-   }
-
-   const resetGame = () => {
-      score > highScore
-      ? setHighScore(score)
-      : setHighScore(highScore)
-      setScore(0);
+   const updateCards = (cardSrc) => {
       setDeck(
          deck.map((card) => {
-            return {...card, chosen: false}
-         })
-      )
-
-   }
-
-   const updateCardStatus = (cardSrc) => {
-      setDeck(
-         deck.map((card) => {
-            if (cardSrc === card.src) {
-               return {...card, chosen: true}
+            if (cardSrc === card.src && card.chosen === 0) {
+               return { ...card, chosen: 1 }
+            } else if (cardSrc === card.src && card.chosen === 1) {
+               return { ...card, chosen: 2 }
             } else {
                return card;
             }
          })
       )
+   }
+
+   useEffect(() => {
+      deck.map((card) => {
+         if (card.chosen === 2) {
+            console.log('game over')
+            score > highScore ? setHighScore(score) : setHighScore(highScore)
+            setScore(0)
+            resetGame()
+
+         }
+      })
+   })
+
+   const incrementScore = () => {
+      setScore(score + 1)
    }
 
    const shuffle = (array) => {
@@ -81,8 +73,13 @@ export default function CardContainer(props) {
          array[currentIndex] = array[randomIndex];
          array[randomIndex] = temporaryValue;
       }
-
       return array;
+   }
+
+   const resetGame = () => {
+      setDeck(deck.map((card) => {
+         return { ...card, chosen: 0 }
+      }))
    }
 
 
