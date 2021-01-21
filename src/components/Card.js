@@ -1,11 +1,11 @@
-import React from 'react'
-import  card from '../img/1.png'
-import './Card.css'
+import React, { useState, useEffect } from 'react'
 
-export default function Card() {
+export default function Card(props) {
+
+
    return (
       <div className="card">
-         <img src={card} alt=""/>
+         <img src={props.src} alt=""/>
       </div>
    )
 }
