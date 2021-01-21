@@ -7,8 +7,8 @@ Components:
    3. footer
 
 Features:
-   1.  choose a card from several options in an array.
-      a.  Once chosen, that card is marked as already picked
+   ✔ 1.  choose a card from several options in an array. @done(21-01-21 11:08)
+      ✔ a.  Once chosen, that card is marked as already picked @done(21-01-21 11:08)
    2.  Reset the card container with a new order of cards
       a.  If a unique card is chosen, game keeps going
       b.  if any any point a card is re-chosen the game is over.
@@ -19,4 +19,26 @@ Features:
 Style:
    1.  grid for card container
    2.  each card will be one in 52 cards from a deck
+
+
+   shuffle:
+      ✔ each card has a shuffleid @done(21-01-21 11:13)
+      ☐ when shuffleDeck runs, the shuffle id for each card is randomly changed
+         ☐
+      ☐ the card order is printed incrementally based on the shuffle id
+      ☐ when a card is chosen, the process repeats
+
+game over:
+   ☐ each time a card is chosen, that card's key is added to the chosen array
+   ☐ need to run a check to see if that key is already in the array.  if so, game over!
+   ☐ if score is higher than highscore, set the new highscore
+   ☐ reset score to zero
+   ☐ wipe the chosen array
+
+
+
+   Check for duplicates:
+      ☐ when a card is clicked, check its chosen status
+      ☐ if choen is true, game over
+      ☐ if chosen if false, change chosen to true, add a point and shuffle
    
