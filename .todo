@@ -1,0 +1,22 @@
+Components:
+   1. header
+   2. main content
+      a. card container
+      b. individual card
+      c. score / highscore
+   3. footer
+
+Features:
+   1.  choose a card from several options in an array.
+      a.  Once chosen, that card is marked as already picked
+   2.  Reset the card container with a new order of cards
+      a.  If a unique card is chosen, game keeps going
+      b.  if any any point a card is re-chosen the game is over.
+   3.  A scoring system.  One point for each unique card chosen
+      a.  game over when a repeat choice is made
+   4. function to display random cards.
+
+Style:
+   1.  grid for card container
+   2.  each card will be one in 52 cards from a deck
+   
