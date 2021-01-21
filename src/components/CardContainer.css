@@ -9,3 +9,12 @@
 .card-container div img {
    width: 10rem;
 }
+
+.score {
+   height: 2rem;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   color: white;
+   font-weight: 700;
+}

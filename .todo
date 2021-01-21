@@ -27,18 +27,3 @@ Style:
          ☐
       ☐ the card order is printed incrementally based on the shuffle id
       ☐ when a card is chosen, the process repeats
-
-game over:
-   ☐ each time a card is chosen, that card's key is added to the chosen array
-   ☐ need to run a check to see if that key is already in the array.  if so, game over!
-   ☐ if score is higher than highscore, set the new highscore
-   ☐ reset score to zero
-   ☐ wipe the chosen array
-
-
-
-   Check for duplicates:
-      ☐ when a card is clicked, check its chosen status
-      ☐ if choen is true, game over
-      ☐ if chosen if false, change chosen to true, add a point and shuffle
-   

@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import './Score.css'
 
-export default function Score() {
+export default function Score(props) {
+
+
+
    return (
       <div className="score">
-         <p>Score: x</p>
-         <p>High Score: x</p>
+         <p>Score: {score}</p>
+         <p>High Score: {highScore}</p>
       </div>
    )
 }
