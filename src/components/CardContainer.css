@@ -1,11 +1,13 @@
+
+
 .card-container {
    display: grid;
    grid-template-columns: 1fr 1fr 1fr 1fr;
    grid-template-rows: 1fr 1fr 1fr;
    grid-gap: 10px;
-   justify-items:stretch;
+   justify-items: center;
    padding-top: 2rem;
-   width: 50rem;
+   width: 40rem;
    margin: 0 auto;
 }
 
@@ -14,10 +16,18 @@
 }
 
 .score {
-   height: 2rem;
    display: flex;
-   justify-content: space-around;
-   align-items: center;
+   justify-content:center;
    color: white;
+   font-size: 1.25rem;
    font-weight: 700;
+}
+
+.score p {
+   padding: 0 1rem;
+}
+
+.score span {
+   color: yellow;
+   font-weight: 400;
 }

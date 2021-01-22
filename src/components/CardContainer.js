@@ -83,7 +83,7 @@ export default function CardContainer(props) {
    }
 
    return (
-      <div>
+      <main>
          <div className="card-container">
             {deck.map((card) => {
                return <Card
@@ -95,9 +95,9 @@ export default function CardContainer(props) {
             })}
          </div>
          <div className="score">
-            <p>Score: {score}</p>
-            <p>High Score: {highScore}</p>
+            <p>Score: <span>{score}</span></p>
+            <p>High Score: <span>{highScore}</span></p>
          </div>
-      </div>
+      </main>
    )
 }
