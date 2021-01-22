@@ -7,21 +7,22 @@ export default function CardContainer(props) {
    const [highScore, setHighScore] = useState(0);
 
    const [deck, setDeck] = useState([
-      { chosen: 0, key: 1, src: '/img/1.png' },
-      { chosen: 0, key: 2, src: '/img/2.png' },
-      { chosen: 0, key: 3, src: '/img/3.png' },
-      { chosen: 0, key: 4, src: '/img/4.png' },
-      { chosen: 0, key: 5, src: '/img/5.png' },
-      { chosen: 0, key: 6, src: '/img/6.png' },
-      { chosen: 0, key: 7, src: '/img/7.png' },
-      { chosen: 0, key: 8, src: '/img/8.png' },
-      { chosen: 0, key: 9, src: '/img/9.png' },
-      { chosen: 0, key: 10, src: '/img/10.png' },
-      { chosen: 0, key: 11, src: '/img/11.png' },
-      { chosen: 0, key: 12, src: '/img/12.png' },
+      { chosen: 0, key: 1, src: '/img/1.png', baseURI: 'https://jimmontour.github.io/memory-card/' },
+      { chosen: 0, key: 2, src: '/img/2.png', baseURI: 'https://jimmontour.github.io/memory-card/' },
+      { chosen: 0, key: 3, src: '/img/3.png', baseURI: 'https://jimmontour.github.io/memory-card/' },
+      { chosen: 0, key: 4, src: '/img/4.png', baseURI: 'https://jimmontour.github.io/memory-card/' },
+      { chosen: 0, key: 5, src: '/img/5.png', baseURI: 'https://jimmontour.github.io/memory-card/' },
+      { chosen: 0, key: 6, src: '/img/6.png', baseURI: 'https://jimmontour.github.io/memory-card/' },
+      { chosen: 0, key: 7, src: '/img/7.png', baseURI: 'https://jimmontour.github.io/memory-card/' },
+      { chosen: 0, key: 8, src: '/img/8.png', baseURI: 'https://jimmontour.github.io/memory-card/' },
+      { chosen: 0, key: 9, src: '/img/9.png', baseURI: 'https://jimmontour.github.io/memory-card/' },
+      { chosen: 0, key: 10, src: '/img/10.png', baseURI: 'https://jimmontour.github.io/memory-card/' },
+      { chosen: 0, key: 11, src: '/img/11.png', baseURI: 'https://jimmontour.github.io/memory-card/' },
+      { chosen: 0, key: 12, src: '/img/12.png', baseURI: 'https://jimmontour.github.io/memory-card/' },
    ])
 
    const handleClick = (e) => {
+      console.log(e)
       shuffle(deck)
       const cardSrc = e.target.attributes.src.nodeValue;
       updateCards(cardSrc)
@@ -88,7 +89,8 @@ export default function CardContainer(props) {
             {deck.map((card) => {
                return <Card
                key={card.id}
-               src={card.src}
+
+               src={card.baseURI + card.src}
                chosen={card.chosen}
                handleClick={handleClick}
             />

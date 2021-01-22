@@ -10,13 +10,19 @@ https://jimmontour.github.io/memory-card/!
 ## Available Scripts
 
 In the project directory, you can run:
-`
-      "start": "react-scripts start",
-      "build": "react-scripts build",
-      "test": "react-scripts test",
-      "eject": "react-scripts eject",
-      "predeploy": "npm run build",
-      "deploy": "gh-pages -d build"
-`
+
+`"start": "react-scripts start"`
+
+`"build": "react-scripts build"`
+
+`"test": "react-scripts test"`
+
+`"eject": "react-scripts eject"`
+
+`"predeploy": "npm run build"`
+
+`"deploy": "gh-pages -d build"`
+
+---
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
